@@ -1,0 +1,3 @@
+#EXTM3U
+#EXT-X-STREAM-INF:PROGRAM-ID=1, BANDWIDTH=200000
+https://www.terabox.com/api/streaming?path=%2Fvideo_2023-04-29_10-16-14.mp4&app_id=250528&clienttype=0&type=M3U8_FLV_264_480&vip=0
