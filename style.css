@@ -13,11 +13,4 @@ body {
     text-decoration: none;
     color: #fff;
   }
-@font-face {
- font-family: "Monstserrat Bold";
- src: url("https://github.com/tnn-chaik/tnn-chaik.github-io/raw/main/assets/fonts/MontserratBold.ttf") format("ttf");
-}
-@font-face {
- font-family: "Halvar Breikschrift Black";
- src: url("https://ntizish.github.io/fonts/HalvarBreit-Blk.ttf") format("woff");
-}
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;900&display=swap');
