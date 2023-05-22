@@ -3,4 +3,4 @@
 #EXT-X-MEDIA-SEQUENCE:420208
 #EXT-X-TARGETDURATION:4
 #EXTINF:no desc,
-http://localhost:8000/ont.ts
+http://kokmedia-test.ddns.net:8000/ont.ts
