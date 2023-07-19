@@ -1,93 +1,72 @@
-<html>
 <head>
- <meta charset="UTF-8">
- <title>Сайт на реконструкции</title>
- <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
-  <style>
-body {
- font-family: 'Rubik', sans-serif;
- margin: 0;
- padding: 0;
-}
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;900');
+        body {
+            background: #000;
+        }
+        
+        body {
+            padding-top: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        
+        .play1 {
+            display: block;
+        }
+        
+        span {
+            color: #fff;
+            font-family: 'Rubik', sans-serif;
+        }
+    </style>
+    <script> 
+     var audio = document.getElementById("myAudio");
+     var text = document.getElementById("text");
+      // Функция для проверки доступности аудиофайлов
+  function checkAudio(source, errorSource) {
+    var audio = new Audio();
+    
+    audio.onerror = function() {
+      // Если аудиофайл недоступен, меняем ссылку на запасной аудиофайл
+      document.getElementById(source).src = errorSource;
+    };
+    
+    audio.src = document.getElementById(source).src;
+    audio.load();
+  }
+ checkAudio("myAudio", "https://pub0201.101.ru:8443/stream/reg/mp3/128/region_avto_tz_0");     audio.addEventListener("loadedmetadata", function() {
+            if (audio.src.includes("https://s0.radioheart.ru:8000/radio-avc")) {
+                text.innerText = "Радио AVC";
+            } else if (audio.src.includes("https://pub0201.101.ru:8443/stream/reg/mp3/128/region_avto_tz_0")) {
+                text.innerText = "Авторадио";
+            }
+        });
 
-header {
- background-color: #333;
- color: #fff;
- padding: 20px;
- text-align: center;
-}
+        function play() {
+            let element1 = document.getElementById("play1");
+            let element2 = document.getElementById("pause2");
+            element1.style.cssText = "filter: invert(100%); margin: 3.5px; display: none;";
+            element2.style.cssText = "filter: invert(100%); margin: 3.5px;";
+            audio.play();
+        }
 
-h1 {
- margin: 0;
-}
-
-main {
- padding: 20px;
-}
-
-section {
- margin-bottom: 40px;
-}
-
-h2 {
- margin-top: 0;
-}
-
-ul {
- list-style: none;
- padding: 0;
-}
-
-li {
- margin-bottom: 10px;
-}
-
-footer {
- background-color: #333;
- color: #fff;
- padding: 20px;
- text-align: center;
-}
-img {
-  pointer-events: none;
-}
-.img1 {
-    animation-name: rotation1;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}
-@keyframes rotation1 {
-    0% {
-        transform:rotate(22.5deg);
-    }
-    100% {
-        transform:rotate(382.5deg);
-    }
-}
-.img2 {
-    animation-name: rotation2;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}
-@keyframes rotation2 {
-    0% {
-        transform:rotate(0deg);
-    }
-    100% {
-        transform:rotate(-360deg);
-    }
-}
-  </style>
+        function pause() {
+            let element1 = document.getElementById("play1");
+            let element2 = document.getElementById("pause2");
+            element1.style.cssText = "filter: invert(100%); margin: 3.5px;";
+            element2.style.cssText = "filter: invert(100%); margin: 3.5px; display: none;";
+            audio.pause();
+        }
+    </script>
 </head>
+
 <body>
- <main>
-  <center>
-    <img src="https://www.svgrepo.com/show/401848/gear.svg" width="200px" class="img1"><img src="https://www.svgrepo.com/show/401848/gear.svg" width="200px" style="margin-left: -20px;" class="img2"><img src="https://www.svgrepo.com/show/401848/gear.svg" width="200px" class="img1" style="margin-left: -20px;">
-   <h2>Сайт на реконструкции</h2>
-   <p>На данный момент наш сайт находится на реконструкции. Мы работаем над улучшением и обновлением контента. Приносим извинения за временные неудобства.</p>
-  </center>
- </main>
+    <img src="https://www.intervolga.ru/upload/medialibrary/f79/f797a19f26ef87fa77d5ac53a495d1f1.png" style="pointer-events: none;">
+    <div style="margin: 0 auto;"><span>Слушать онлайн</span>
+        <br><img src="https://img.icons8.com/?size=2048&id=60450&format=svg" width="32px" style="filter: invert(100%);" id="play1" onclick="play()"><img src="https://img.icons8.com/?size=2048&id=36268&format=svg" width="32px" style="filter: invert(100%); display: none;"
+        id="pause2" onclick="pause()">
+        <br><span>Сейчас в эфире: </span><span id="text">Радио AVC</span>
+        <audio id="myAudio" src="https://s0.radioheart.ru:8000/radio-avc"></audio>
+    </div>
 </body>
-</html>
