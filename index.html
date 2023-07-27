@@ -1,72 +1,36 @@
-<head>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;900');
-        body {
-            background: #000;
-        }
-        
-        body {
-            padding-top: 30px;
-            padding-left: 30px;
-            padding-right: 30px;
-        }
-        
-        .play1 {
-            display: block;
-        }
-        
-        span {
-            color: #fff;
-            font-family: 'Rubik', sans-serif;
-        }
-    </style>
-    <script> 
-     var audio = document.getElementById("myAudio");
-     var text = document.getElementById("text");
-      // Функция для проверки доступности аудиофайлов
-  function checkAudio(source, errorSource) {
-    var audio = new Audio();
-    
-    audio.onerror = function() {
-      // Если аудиофайл недоступен, меняем ссылку на запасной аудиофайл
-      document.getElementById(source).src = errorSource;
-    };
-    
-    audio.src = document.getElementById(source).src;
-    audio.load();
-  }
- checkAudio("myAudio", "https://pub0201.101.ru:8443/stream/reg/mp3/128/region_avto_tz_0");     audio.addEventListener("loadedmetadata", function() {
-            if (audio.src.includes("https://s0.radioheart.ru:8000/radio-avc")) {
-                text.innerText = "Радио AVC";
-            } else if (audio.src.includes("https://pub0201.101.ru:8443/stream/reg/mp3/128/region_avto_tz_0")) {
-                text.innerText = "Авторадио";
-            }
-        });
+<style> @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;900&display=swap'); html, body { background: #fff; margin-top: 0; margin-right: 0; margin-left: 0; } span, div { font-family: 'Rubik', sans-serif; color: #fff; } .damisamu-dsakgcesan .kesagub { width:100%; display:table; } .damisamu-dsakgcesan .kesagub .gsame-kigcesan { display:table-row; } .damisamu-dsakgcesan .kesagub .kesagub-cell { display:table-cell; width:50%; } .damisamu-dsakgcesan .kesagub .kesagub-cell.kesagub1 { background: #fff; color: #f7f4f4; text-align: justify; height: 100%; } .damisamu-dsakgcesan .kesagub .kesagub-cell.kesagub2 { background: #333333; text-align: justify; border: 1px #fff; color: #fdfdfd; height: 100%; position: fixed; margin: 1px; } div { font-family: 'Rubik', sans-serif; } </style><script>function shaurma1() {
+  var shaurma = document.getElementById("shaurma");
+var shaurma1 = document.getElementById("shaurma1");
+  shaurma.style.cssText = "height: 250px; margin: 1px; position: relative; padding: 10px; background: #333333; display: none;";
+  shaurma1.style.cssText = "height: 250px; margin: 1px; position: relative; padding: 10px; background: #333333;";
+}
+function shaurmaV() {
+  shaurma.style.cssText = "height: 250px; margin: 1px; position: relative; padding: 10px; background: #333333;";
+  shaurma1.style.cssText = "height: 250px; margin: 1px; position: relative; padding: 10px; background: #333333; display: none;";
+}</script><div class="damisamu-dsakgcesan"> <div class="kesagub"> <div class="gsame-kigcesan"> <div class="kesagub-cell kesagub1"><div style="height: 250px; margin: 1px; position: relative; padding: 10px; background: #333333;" id="shaurma" onclick="shaurma1()"><div style="font-size: 30px;" id="naz"></div><strong><div style="position: absolute; bottom: 0; margin-bottom: 10px; margin-right: 10px; right: 0; font-size: 40px;" id="count"></div></strong></div><div style="height: 250px; margin: 1px; position: relative; padding: 10px; background: #333333; display: none;" id="shaurma1" onclick="shaurmaV()"><div style="font-size: 30px;" id="naz"></div><br><span>Кол-во:</span><br><div><input type="text" style="font-size: 30px; margin-bottom: 20px;" id="shaurmakol" readonly value="1"></div><div style=" margin-top: -30px;"><span style="font-size: 50px" id="shaurmaplus"><strong>+ </strong></span><span style="font-size: 50px" id="shaurmaminus"><strong> -</strong></span></div><strong><div style="position: absolute; bottom: 0; margin-bottom: 10px; margin-right: 10px; right: 0; font-size: 40px;" id="count"></div></strong></div> </div> <div class="kesagub-cell kesagub2"><div style="padding: 10px;"><span style="font-size: 40px;"><strong><center>НОВЫЙ ЗАКАЗ</center></strong></span><div style="width: 100%; height: 2px; background: #fff;"></div><div style="margin-top: 10px; margin-left: 20px; font-size: 25px;" id="zakaz1"></div><div style="margin-top: 10px; margin-left: 20px; font-size: 25px;" id="zakaz2"></div><div style="margin-top: 10px; margin-left: 20px; font-size: 25px;" id="zakaz3"></div><div style="margin-top: 10px; margin-left: 20px; font-size: 25px;" id="zakaz4"></div><div style="margin-top: 10px; margin-left: 20px; font-size: 25px;" id="zakaz5"></div></div><div style="width: 50%; height: 100px; background: #eee; position: absolute; bottom: 0;"><img style="width: 100%; height: 100px;" src="https://img.icons8.com/?size=2048&id=E7Z1VLsR0vad&format=svg"></div><div style="width: 50%; height: 100px; background: #009000; position: absolute; bottom: 0; right: 0;"><img style="width: 100%; height: 100px; filter: invert(100%);" src="https://img.icons8.com/?size=2048&id=yPz7jGZjgQrV&format=svg"></div></div> </div> </div> </div>
 
-        function play() {
-            let element1 = document.getElementById("play1");
-            let element2 = document.getElementById("pause2");
-            element1.style.cssText = "filter: invert(100%); margin: 3.5px; display: none;";
-            element2.style.cssText = "filter: invert(100%); margin: 3.5px;";
-            audio.play();
-        }
+    <script>
+var shaurmaNaz = "Шаурма";
+var shaurmaCount = "110.00";
+var shnazDiv = document.querySelector("#shaurma #naz");
+      var shnaz1Div = document.querySelector("#shaurma1 #naz");
+      var shcountDiv = document.querySelector("#shaurma #count");
+            var shcount1Div = document.querySelector("#shaurma1 #count");
+shcountDiv.textContent = shaurmaCount;
+shnazDiv.textContent = shaurmaNaz;
+      shcount1Div.textContent = shaurmaCount;
+shnaz1Div.textContent = shaurmaNaz;
+      var shaurmaPlus = document.getElementById("shaurmaplus");
+var shaurmaMinus = document.getElementById("shaurmaminus");
+var countElement = document.getElementById("shaurmakol");
 
-        function pause() {
-            let element1 = document.getElementById("play1");
-            let element2 = document.getElementById("pause2");
-            element1.style.cssText = "filter: invert(100%); margin: 3.5px;";
-            element2.style.cssText = "filter: invert(100%); margin: 3.5px; display: none;";
-            audio.pause();
-        }
+shaurmaPlus.addEventListener("click", function() {
+  var countValue = parseInt(countElement.value);
+  countElement.value = countValue + 1;
+});
+
+shaurmaMinus.addEventListener("click", function() {
+  var countValue = parseInt(countElement.value);
+  countElement.value = countValue - 1;
+});
     </script>
-</head>
-
-<body>
-    <img src="https://www.intervolga.ru/upload/medialibrary/f79/f797a19f26ef87fa77d5ac53a495d1f1.png" style="pointer-events: none;">
-    <div style="margin: 0 auto;"><span>Слушать онлайн</span>
-        <br><img src="https://img.icons8.com/?size=2048&id=60450&format=svg" width="32px" style="filter: invert(100%);" id="play1" onclick="play()"><img src="https://img.icons8.com/?size=2048&id=36268&format=svg" width="32px" style="filter: invert(100%); display: none;"
-        id="pause2" onclick="pause()">
-        <br><span>Сейчас в эфире: </span><span id="text">Радио AVC</span>
-        <audio id="myAudio" src="https://s0.radioheart.ru:8000/radio-avc"></audio>
-    </div>
-</body>
